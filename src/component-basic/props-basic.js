@@ -35,9 +35,10 @@ function Greeting(props) {
 
 
 // 함수 인자값을 전달받으면서 비구조화 할당 진행
-const PersonProfile = function ({ name, age, gender, profile, highlight }) {
+const PersonProfile = function (props) {
+    const {name, age, gender, profile} = props.person
     return (
-        <div className='person' style={highlight ? { color: 'red', backgroundColor: 'yellow' } : null}> {/* undefined가 들어가있다. */}
+        <div className='person' style={props.highlight ? { color: 'red', backgroundColor: 'yellow' } : null}> {/* undefined가 들어가있다. */}
             <h1>Profile</h1>
             <img src={profile}/>
             <p>name : {name}</p>
@@ -54,18 +55,12 @@ const anotherPerson = {
     profile: 'https://randomuser.me/api/portraits/women/75.jpg'
     }
 
+const {name, gender, ...rest} = anotherPerson
+console.log(rest) // {age: 28, profile: '...'}
+
 ReactDOM.render(
     <div>
-        {/* <ComponentWithProps value="Hello"/>
-        <ComponentWithProps value={1} />
-        <ComponentWithProps value={ {a: 1, b: "React"}} />
-        <ComponentWithProps value={() => { }} /> */}
-        <Greeting name="김미림" />
-        <PersonProfile name='John' age={35} gender='male'
-            profile='https://randomuser.me/api/portraits/men/75.jpg' 
-            highlight/>
-        <PersonProfile {...anotherPerson} highlight />
-
+        <PersonProfile person={anotherPerson} highlight/>
     </div>,
     document.getElementById("root")
 );
