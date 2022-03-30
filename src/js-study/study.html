@@ -1,0 +1,26 @@
+<!-- 배열(리스트) 다루기 -->
+<script>
+    let lst = [
+        { id: 1, name: "John" },
+        { id: 2, name: "Jane" },
+        { id: 3, name: "Paul" },
+    ]
+    // lst.push({ id: 4, name: "Ken" })
+    // console.log(lst)
+
+    let newLst = lst.concat({ id: 4, name: "Ken" })
+    console.log("concat =====")
+    console.log(lst) // 원본에 영향 주지 않음 (변화가 없음)
+    console.log(newLst) // 새로운 리스트 객체가 생성됨 (Ken 추가)
+    console.log(lst === newLst) // 서로 다른 객체이므로 false를 반환
+
+    let updatedId = 2
+    let updatedName = "Smith"
+
+    // map 메소드 설명
+    let arr = [1, 2, 3]
+    let ret1 = arr.map(v => v * 2)
+    let ret2 = arr.map(function (v) {
+        return (v % 2) == 0 // 짝수를 구하는 것이기 때문에 false, true, flase, true 반환
+    })
+</script>

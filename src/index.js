@@ -4,4 +4,7 @@
 // import './component-basic/props-children';
 // import './component-basic/slotMachine_study';
 // import './component-intermediate/state-study-1';
-import './component-intermediate/state-study-2';
+// import './component-intermediate/state-study-2';
+// import './component-intermediate/state-study-with-inner-object';
+// import './component-intermediate/counter-demo';
+import './js-study/immutable-list-manipulation';
