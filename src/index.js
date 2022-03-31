@@ -6,6 +6,8 @@
 // import './component-intermediate/state-study-1';
 // import './component-intermediate/state-study-2';
 // import './component-intermediate/state-study-with-inner-object';
-// import './component-intermediate/counter-demo';
+import './component-intermediate/counter-demo';
 // import './js-study/immutable-list-manipulation';
-import './component-intermediate/manipulate-list';
+// import './component-intermediate/manipulate-list';
+// import './component-intermediate/todo-app-demo';
+import './component-intermediate/test-todo-app';
