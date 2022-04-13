@@ -39,19 +39,21 @@ const Clickgame = function (props) {
         fontWeight: "bold"
     }
 
-    if(timerState.timeout) buttonStyle.background ='gray'
+    if (timerState.timeout) buttonStyle.background = 'gray'
 
     return (
         <div>
             {timerState.timeout ? <h2>게임 끝 </h2> : <h2>남은 시간 : {timerState.time}</h2>}
             <h2>클릭 횟수 : {clickCount} </h2>
             {
-            <button style={buttonStyle} onClick={() => {
-                if (!timerState.timeout) {
-                    setClickCount(c => c + 1)
-                }
-            }}>클릭</button>
-        }
+                timerState.timeout ?
+                    null :
+                    <button style={buttonStyle} onClick={() => {
+                        if (!timerState.timeout) {
+                            setClickCount(c => c + 1)
+                        }
+                    }}>클릭</button>
+            }
         </div>
     )
 }
