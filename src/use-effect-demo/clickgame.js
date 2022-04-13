@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 
-const ClickGame = function (props) {
+const Clickgame = function (props) {
+    const [clickCount, setClickCount] = useState(0)
     const [timerState, setTimerState] = useState({
         time: props.time,
         timeout: false
@@ -27,28 +28,31 @@ const ClickGame = function (props) {
         }
     }, [])
 
+    const buttonStyle = {
+        background: 'red',
+        width: "100px",
+        height: "100px",
+        border: "0px",
+        borderRadius: "50%",
+        color: "white",
+        fontSize: "24px",
+        fontWeight: "bold"
+    }
+
+    if(timerState.timeout) buttonStyle.background ='gray'
+
     return (
         <div>
-            {timerState.timeout ? <h2>timeout</h2> : <h2>{timerState.time}</h2>}
-        </div>
-    )
-}
-
-const App = function (props) {
-    const [trigger, setTrigger] = useState(false)
-
-    return (
-        <div>
+            {timerState.timeout ? <h2>게임 끝 </h2> : <h2>남은 시간 : {timerState.time}</h2>}
+            <h2>클릭 횟수 : {clickCount} </h2>
             {
-                !trigger && <div>
-                    <ClickGame time={5} />
-                    <ClickGame time={10} />
-                    <ClickGame time={15} />
-                </div>
-            }
-            <button onClick={() => setTrigger(true)}>타이머 제거</button>
+            <button style={buttonStyle} onClick={() => {
+                if (!timerState.timeout) {
+                    setClickCount(c => c + 1)
+                }
+            }}>클릭</button>
+        }
         </div>
     )
 }
-
-ReactDOM.render(<App />, document.getElementById("root"))
+ReactDOM.render(<Clickgame time={5} />, document.getElementById("root"))
