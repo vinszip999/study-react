@@ -13,11 +13,21 @@ const RepoItem = (props) => {
         </div>
     )
 }
-
+function Search({ onSubmit }) {
+    const [input, setInput] = useState('')
+    return (
+        <div>
+            <input type="text"
+                onChange={(e) => setInput(e.target.value)}
+                value={input} />
+            <button onClick={() => onSubmit(input)}>검색</button>
+        </div>
+    )
+}
 function RepoSearchApp() {
     const [repos, setRepos] = useState([])
     const [loading, setLoading] = useState(true)
-    const userName = "vinszip999"
+    const [userName, setUserName] = useState(null)
 
     useEffect(() => {
         if (userName) {
@@ -31,10 +41,13 @@ function RepoSearchApp() {
                 })
 
         }
-    }, [])
+    }, [userName])
+
+    console.log(repos)
 
     return (
         <div>
+            <Search onSubmit={setUserName} />
             {
                 repos.length === 0
                     ? loading ? <h1>저장소를 불러오는 중입니다.</h1> : <h1>표시할 저장소가 없습니다.</h1>
