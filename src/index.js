@@ -24,4 +24,8 @@
 // import './use-effect-demo/use-effect-with-dom';
 // import './use-effect-demo/timer-demo';
 // import './use-effect-demo/clickgame';
-import './use-effect-demo/github-fetch-repos';
+// import './use-effect-demo/github-fetch-repos';
+
+// import './component-advanced/ref-demo';
+// import './component-advanced/controlled-component';
+import './component-advanced/reservation-form';
