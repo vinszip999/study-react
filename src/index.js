@@ -36,4 +36,6 @@
 
 // import './component-advanced/UserContext'
 // import './component-advanced/use-context-using-user-context'
-import './component-advanced/context-api-theme-context'
+// import './component-advanced/context-api-theme-context'
+import './component-advanced/fake-login-demo'
+import './component-advanced/fake-login-demo-solve'
