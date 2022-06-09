@@ -43,4 +43,8 @@
 // import './component-styling/using-css-module'
 // import './component-styling/using-styled-components'
 // import './component-styling/using-svg'
-import './component-styling/using-react-icons'
+// import './component-styling/using-react-icons'
+// import './use-reducer-demo/use-reducer-counter-1'
+// import './use-reducer-demo/use-reducer-counter-2'
+import './use-reducer-demo/use-reducer-todo-app-1'
+
